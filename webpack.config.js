@@ -35,10 +35,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
+    extensions: ["*", ".js", ".jsx"]
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
@@ -48,12 +45,10 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3000,
-    publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
+    publicPath: "http://localhost:3000/dist/"
   },
   ignoreWarnings: [/Failed to parse source map/],
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve('./public/index.html')
     })
