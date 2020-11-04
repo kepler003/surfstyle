@@ -26,10 +26,20 @@ module.exports = {
             outputPath: 'fonts/'
           }
         }
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
       }
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
+  },
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/", // Change to '/' for production
@@ -41,11 +51,7 @@ module.exports = {
     publicPath: "http://localhost:3000/dist/",
     hotOnly: true
   },
-  resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
-  },
+  ignoreWarnings: [/Failed to parse source map/],
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
