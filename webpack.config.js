@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -35,7 +34,15 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ["*", ".js", ".jsx"],
+    alias: {
+      components: path.resolve(__dirname, 'src/components'),
+      pages: path.resolve(__dirname, 'src/components/pages'),
+      organisms: path.resolve(__dirname, 'src/components/organisms'),
+      molecules: path.resolve(__dirname, 'src/components/molecules'),
+      atoms: path.resolve(__dirname, 'src/components/atoms'),
+      styles: path.resolve(__dirname, 'src/styles')
+    }
   },
   output: {
     path: path.resolve(__dirname, "dist/"),

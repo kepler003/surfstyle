@@ -1,2 +1,8 @@
 
-.header {}
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  padding: $size-5 $size-4;
+  background-color: rgba($white, .85);
+}
