@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+$icon-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "gray":       $gray,
+  "white":      $white,
+  "font-color": $font-color
+);
+
+.icon {
+
+  @each $color in map.keys($icon-colors) {
+    &--#{$color} path {
+      color: map.get($icon-colors, $color);
+    }
+  }
+}

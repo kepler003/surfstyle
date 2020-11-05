@@ -41,7 +41,8 @@ module.exports = {
       organisms: path.resolve(__dirname, 'src/components/organisms'),
       molecules: path.resolve(__dirname, 'src/components/molecules'),
       atoms: path.resolve(__dirname, 'src/components/atoms'),
-      styles: path.resolve(__dirname, 'src/styles')
+      styles: path.resolve(__dirname, 'src/styles'),
+      utils: path.resolve(__dirname, 'src/utils')
     }
   },
   output: {
