@@ -5,4 +5,13 @@
   height: $size-8;
   padding: 0 $size-4;
   background-color: rgba($white, .85);
+
+
+  &__nav {
+    margin-left: auto;
+  }
+
+  &__nav-btn {
+    margin-left: $size-2;
+  }
 }
