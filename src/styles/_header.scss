@@ -3,9 +3,8 @@
   @include flex-y-center;
   width: 100%;
   height: $size-8;
-  padding: 0 $size-4;
+  padding: 0 $padding-x-mobile;
   background-color: rgba($white, .85);
-
 
   &__nav {
     margin-left: auto;

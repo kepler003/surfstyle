@@ -17,14 +17,18 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot|png|jpg|jpeg)(\?v=\d+\.\d+\.\d+)?$/,
         use: {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts/'
+            outputPath: 'assets/'
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
       {
         test: /\.js$/,
@@ -42,7 +46,8 @@ module.exports = {
       molecules: path.resolve(__dirname, 'src/components/molecules'),
       atoms: path.resolve(__dirname, 'src/components/atoms'),
       styles: path.resolve(__dirname, 'src/styles'),
-      utils: path.resolve(__dirname, 'src/utils')
+      utils: path.resolve(__dirname, 'src/utils'),
+      images: path.resolve(__dirname, 'src/images')
     }
   },
   output: {

@@ -4,21 +4,7 @@
   flex-flow: row wrap;
 }
 
-@mixin flex-x-center {
-  @include flex;
-  justify-content: center;
-}
 
-@mixin flex-y-center {
-  @include flex;
-  align-items: center;
-  align-content: center;
-}
-
-@mixin flex-center {
-  @include flex-x-center;
-  @include flex-y-center;
-}
 
 @mixin flex-row {
   @include flex;
@@ -28,4 +14,38 @@
 @mixin flex-column {
   @include flex;
   flex-flow: column wrap;
+}
+
+
+
+@mixin flex-x-start {
+  @include flex;
+  justify-content: flex-start;
+}
+
+@mixin flex-x-center {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin flex-y-start {
+  @include flex;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+@mixin flex-y-center {
+  @include flex;
+  align-items: center;
+  align-content: center;
+}
+
+@mixin flex-start {
+  @include flex-x-start;
+  @include flex-y-start;
+}
+
+@mixin flex-center {
+  @include flex-x-center;
+  @include flex-y-center;
 }

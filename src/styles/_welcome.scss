@@ -1,0 +1,55 @@
+
+.welcome {
+  padding: $padding-x-mobile;
+
+  &__city {
+    color: $primary;
+    @extend .font--fancy;
+    @extend .font--size-h3;
+    font-weight: 400;
+  }
+
+  &__camp-name {
+    margin: $size-3 0 $size-6 0;
+    color: $gray-3;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: $size-7;
+  }
+
+  &__info {
+
+    &-box {
+      padding-left: $size-4;
+      position: relative;
+      
+      &::before {
+        content: '';
+        width: 2px;
+        height: 48px;
+        background-color: $primary;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &-heading {
+      @extend .font--size-h6;
+      letter-spacing: $size-1;
+    }
+
+    &-text {
+      margin-top: $size-4;
+      color: $gray-5;
+      line-height: $size-6;
+    }
+  }
+
+  &__img {
+    width: calc(100% + #{$padding-x-mobile * 2});
+    height: $size-11;
+    margin-left: -$padding-x-mobile;
+    margin-right: -$padding-x-mobile;
+  }
+}

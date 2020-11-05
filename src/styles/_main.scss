@@ -1,6 +1,6 @@
 
-.app {
+.main {
   @include flex-start;
+  @include flex-column;
   width: 100%;
-  min-height: 100vh;
 }
