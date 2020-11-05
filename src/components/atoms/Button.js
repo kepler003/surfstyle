@@ -2,12 +2,12 @@ import React from 'react';
 
 export default ({ children, className, shape, bgColor, color, ...rest }) => {
 
-  let newClassName = `button ${ className }`;
+  let newClassName = `${ className } button`;
 
   // Set shape
   switch (shape) {
     case undefined: break;
-    case 'icon': newClassName += ' button--icon'; break;
+    case 'rounded': newClassName += ' button--icon'; break;
   };
   
   // Set background color

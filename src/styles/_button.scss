@@ -1,5 +1,6 @@
 
 .button {
+  @include flex-center;
   cursor: pointer;
   min-width: $size-6;
   min-height: $size-6;

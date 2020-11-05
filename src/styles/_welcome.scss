@@ -1,6 +1,7 @@
 
 .welcome {
   padding: $padding-x-mobile;
+  padding-bottom: 0;
 
   &__city {
     color: $primary;
@@ -10,7 +11,7 @@
   }
 
   &__camp-name {
-    margin: $size-3 0 $size-6 0;
+    margin: $size-1 0 $size-6 0;
     color: $gray-3;
     font-family: 'Roboto Condensed';
     font-weight: 700;
@@ -48,8 +49,45 @@
 
   &__img {
     width: calc(100% + #{$padding-x-mobile * 2});
+    margin-top: $size-4;
     height: $size-11;
     margin-left: -$padding-x-mobile;
     margin-right: -$padding-x-mobile;
+  }
+
+  &__btn-box {
+    @include flex-center;
+    height: $size-5;
+    margin-bottom: -$size-5;
+    transform: translateY(135%);
+  }
+
+  &__btn {
+    @include flex-center;
+    @extend .button--primary;
+    width: $size-7 * 0.9;
+    height: $size-7 * 0.9;
+    padding-left: $size-1 / 2;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: $size-10;
+      height: $size-10;
+      border-radius: $radius-circle;
+      border: 1px solid rgba($gray-6, 0.2);
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      width: $size-12;
+      height: $size-12;
+      border-radius: $radius-circle;
+      border: 1px solid rgba($gray-6, 0.2);
+      position: absolute;
+      pointer-events: none;
+    }
   }
 }
