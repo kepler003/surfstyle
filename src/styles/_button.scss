@@ -1,0 +1,37 @@
+
+.button {
+  cursor: pointer;
+  min-width: $size-6;
+  min-height: $size-6;
+  background-color: transparent;
+  border: none;
+  border-radius: $size-1;
+  transition: 150ms ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 1px $gray-7;
+  }
+  
+  &:hover {
+    background-color: hsla(0, 0%, 0%, .1);
+  }
+
+
+  &--primary {
+    background-color: $primary;
+    background: linear-gradient(to bottom, $primary-6, $primary);
+    
+    &:hover {
+      background-color: $primary-4;
+      background: linear-gradient(to bottom, $primary-6, $primary-6);
+    }
+  }
+
+
+  &--icon {
+    width: $size-6;
+    height: $size-6;
+    border-radius: $radius-circle;
+  }
+}

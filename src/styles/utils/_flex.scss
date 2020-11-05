@@ -1,0 +1,31 @@
+
+@mixin flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin flex-x-center {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin flex-y-center {
+  @include flex;
+  align-items: center;
+  align-content: center;
+}
+
+@mixin flex-center {
+  @include flex-x-center;
+  @include flex-y-center;
+}
+
+@mixin flex-row {
+  @include flex;
+  flex-flow: row wrap;
+}
+
+@mixin flex-column {
+  @include flex;
+  flex-flow: column wrap;
+}
