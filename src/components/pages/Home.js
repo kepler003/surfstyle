@@ -1,10 +1,6 @@
 import React from 'react';
-import Logo from 'atoms/Logo';
-import HeaderNav from 'molecules/HeaderNav';
+import Header from 'organisms/Header';
 
 export default () => (
-  <header className="header">
-    <Logo />
-    <HeaderNav />
-  </header>
+  <Header />
 );
