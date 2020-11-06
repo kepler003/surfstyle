@@ -19,22 +19,22 @@ export default (config, cb) => {
 
     if (typeof config === 'number') {
       if (cb === undefined) throw new Error('Callback function is not specified.');
-      if (window.outerWidth > config) cb();
+      if (window.outerWidth > config) return cb();
       return;
     }
 
     if (oneSize) {
-      if (!!xs && width >= breakpoints.xs && width < breakpoints.sm) { xs(); return; };
-      if (!!sm && width >= breakpoints.sm && width < breakpoints.md) { sm(); return; };
-      if (!!md && width >= breakpoints.md && width < breakpoints.lg) { md(); return; };
-      if (!!lg && width >= breakpoints.lg && width < breakpoints.xl) { lg(); return; };
-      if (!!xl && width >= breakpoints.xl) { xl(); return; };
+      if (!!xs && width >= breakpoints.xs && width < breakpoints.sm) { return xs(); };
+      if (!!sm && width >= breakpoints.sm && width < breakpoints.md) { return sm(); };
+      if (!!md && width >= breakpoints.md && width < breakpoints.lg) { return md(); };
+      if (!!lg && width >= breakpoints.lg && width < breakpoints.xl) { return lg(); };
+      if (!!xl && width >= breakpoints.xl) { return xl(); };
     } else {
-      if (!!xs && width >= breakpoints.xs) { xs(); return; };
-      if (!!sm && width >= breakpoints.sm) { sm(); return; };
-      if (!!md && width >= breakpoints.md) { md(); return; };
-      if (!!lg && width >= breakpoints.lg) { lg(); return; };
-      if (!!xl && width >= breakpoints.xl) { xl(); return; };
+      if (!!xs && width >= breakpoints.xs) { return xs(); };
+      if (!!sm && width >= breakpoints.sm) { return sm(); };
+      if (!!md && width >= breakpoints.md) { return md(); };
+      if (!!lg && width >= breakpoints.lg) { return lg(); };
+      if (!!xl && width >= breakpoints.xl) { return xl(); };
     };
 
   } catch (err) {

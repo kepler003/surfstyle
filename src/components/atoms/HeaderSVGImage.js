@@ -7,7 +7,7 @@ export default () => {
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [viewBox, setViewBox] = useState("0 0 0 0");
   const [path, setPath] = useState(null);
-  const aplitude = 0.15;
+  const [amplitude, setAmplitude] = useState(0.15);
   const ref = useRef(null);
 
 
@@ -22,11 +22,10 @@ export default () => {
   }, []);
 
   useEffect(() => {
+    setViewBox(`0 0 ${size.width} ${size.height}`);
     forSize({
-      xs: () => {
-        setViewBox(`0 0 ${size.width} ${size.height}`);
-        setPathMobile();
-      }
+      xs: () => { setPathXs(); },
+      sm: () => { setPathSm(); }
     });
   }, [size]);
   
@@ -39,16 +38,27 @@ export default () => {
     setSize(size);
   };
 
-  const setPathMobile = () => {
+  const setPathXs = () => {
     setPath(`
-      M0 ${size.height * aplitude}
+      M0 ${size.height * amplitude}
       L0 ${size.height}
       L${size.width} ${size.height}
-      L${size.width} ${size.height * aplitude}
-      Q${size.width * 3 / 4} ${size.height * aplitude * 2} ${size.width / 2} ${size.height * aplitude}
-      Q${size.width * 1 / 4} 0 0 ${size.height * aplitude}
+      L${size.width} ${size.height * amplitude}
+      Q${size.width * 3 / 4} ${size.height * amplitude * 2} ${size.width / 2} ${size.height * amplitude}
+      Q${size.width * 1 / 4} 0 0 ${size.height * amplitude}
     `);
-    console.log('fire');
+  };
+
+  const setPathSm = () => {
+    setPath(`
+      M${size.width * amplitude} 0
+      Q${size.width * amplitude * 2} ${size.height / 4} ${size.width * amplitude} ${size.height / 2}
+      Q0 ${size.height / 4 * 3} ${size.width * amplitude} ${size.height}
+      L${size.width * amplitude} ${size.height}
+      L${size.width} ${size.height}
+      L${size.width} ${0}
+      Z
+    `);
   };
 
 
@@ -68,15 +78,30 @@ export default () => {
             width="100%"
             height="100%"
           >
-            <image
-              href={image}
-              x="0"
-              y={-size.width * 0.6 + 80}
-              width="100%"
-            />
+            {
+              forSize({
+                xs: () => (
+                  <image
+                    href={image}
+                    x="0"
+                    y={-size.width * 0.6 + 80}
+                    width="100%"
+                  />
+                ),
+                sm: () => (
+                  <image
+                    href={image}
+                    x="0"
+                    y="0"
+                    height="100%"
+                  />
+                )
+              })
+            }
           </pattern>
         </defs>
       </svg>
     </div>
   );
 };
+
