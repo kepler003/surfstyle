@@ -20,7 +20,7 @@ export default (config, cb) => {
       if (window.outerWidth > config) return cb();
       return;
     }
-
+    
     if (oneSize) {
       if (!!xs && width >= breakpoints.xs && width < breakpoints.sm) { return xs(); };
       if (!!sm && width >= breakpoints.sm && width < breakpoints.md) { return sm(); };
