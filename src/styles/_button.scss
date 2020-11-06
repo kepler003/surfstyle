@@ -29,6 +29,14 @@
     }
   }
 
+  &--white {
+    background-color: $white;
+    
+    &:hover {
+      background-color: $gray-9;
+    }
+  }
+
 
   &--icon {
     width: $size-6;

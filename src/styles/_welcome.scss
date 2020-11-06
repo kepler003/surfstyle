@@ -99,8 +99,8 @@
     @include flex-x-center;
     @include flex-column;
     flex-wrap: nowrap;
-    padding-top: $size-8;
-    padding-right: 40%;
+    min-height: 100vh;
+    padding: $size-8 40% $size-10 $size-4;
     position: relative;
     
     &__img {
@@ -117,7 +117,7 @@
       height: $size-8;
       width: $size-8;
       margin: 0;
-      margin-bottom: $size-8;
+      margin-top: calc(#{$size-10 - $size-8});
       transform: translate(0, 0);
       position: absolute;
       right: calc(35% + -37px);
