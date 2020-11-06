@@ -49,8 +49,8 @@
 
   &__img {
     width: calc(100% + #{$padding-x-mobile * 2});
-    margin-top: $size-4;
     height: $size-11;
+    margin-top: $size-4;
     margin-left: -$padding-x-mobile;
     margin-right: -$padding-x-mobile;
   }
@@ -88,6 +88,27 @@
       border: 1px solid rgba($gray-6, 0.2);
       position: absolute;
       pointer-events: none;
+    }
+  }
+}
+
+
+@include forSize ("sm") {
+
+  .welcome {
+    @include flex-row;
+    flex-wrap: nowrap;
+    padding-top: $size-8;
+    position: relative;
+    
+    &__img {
+      width: 40%;
+      height: 100%;
+      margin: 0;
+      border: 1px solid red;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
   }
 }

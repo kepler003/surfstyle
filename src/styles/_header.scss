@@ -18,3 +18,12 @@
     margin-left: $size-2;
   }
 }
+
+
+@include forSize ("sm") {
+
+  .header {
+    position: fixed;
+    left: 0;
+  }
+}

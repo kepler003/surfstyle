@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import forSize from 'utils/forSize';
 import image from 'images/surfing.jpg';
 
 
@@ -21,15 +22,12 @@ export default () => {
   }, []);
 
   useEffect(() => {
-    setViewBox(`0 0 ${size.width} ${size.height}`);
-    setPath(`
-      M0 ${size.height * aplitude}
-      L0 ${size.height}
-      L${size.width} ${size.height}
-      L${size.width} ${size.height * aplitude}
-      Q${size.width * 3 / 4} ${size.height * aplitude * 2} ${size.width / 2} ${size.height * aplitude}
-      Q${size.width * 1 / 4} 0 0 ${size.height * aplitude}
-    `);
+    forSize({
+      xs: () => {
+        setViewBox(`0 0 ${size.width} ${size.height}`);
+        setPathMobile();
+      }
+    });
   }, [size]);
   
 
@@ -39,6 +37,18 @@ export default () => {
       height: ref.current.clientHeight
     };
     setSize(size);
+  };
+
+  const setPathMobile = () => {
+    setPath(`
+      M0 ${size.height * aplitude}
+      L0 ${size.height}
+      L${size.width} ${size.height}
+      L${size.width} ${size.height * aplitude}
+      Q${size.width * 3 / 4} ${size.height * aplitude * 2} ${size.width / 2} ${size.height * aplitude}
+      Q${size.width * 1 / 4} 0 0 ${size.height * aplitude}
+    `);
+    console.log('fire');
   };
 
 
