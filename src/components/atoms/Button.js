@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default ({ children, className, shape, bgColor, color, ...rest }) => {
 
   let newClassName = `${ className } button`;

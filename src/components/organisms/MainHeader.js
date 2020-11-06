@@ -1,7 +1,5 @@
 import React from 'react';
-import HeaderSVGImage from 'atoms/HeaderSVGImage';
-import Button from 'atoms/Button';
-import Icon from 'atoms/Icon';
+import { HeaderSVGImage, Button, Icon } from 'atoms/atoms';
 
 export default () => (
   <header className="welcome">

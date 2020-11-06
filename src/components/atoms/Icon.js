@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
 export default ({ icon = "question", color, className = '', ...rest }) => {
   
   let newClassName = className;

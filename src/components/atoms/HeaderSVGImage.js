@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import image from 'images/surfing.jpg';
 
+
 export default () => {
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [viewBox, setViewBox] = useState("0 0 0 0");

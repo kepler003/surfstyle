@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from 'organisms/Header';
-import MainHeader from 'organisms/MainHeader';
+import { Header, MainHeader } from 'organisms/organisms';
 
 export default () => (
   <>

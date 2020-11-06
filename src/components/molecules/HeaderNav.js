@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from 'atoms/Button';
-import Icon from 'atoms/Icon';
+import { Button, Icon } from 'atoms/atoms';
+
 
 export default () => (
   <nav className="header__nav">
