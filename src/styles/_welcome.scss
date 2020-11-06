@@ -126,3 +126,31 @@
     }
   }
 }
+
+@include forSize ("md") {
+
+  .welcome {
+    @include flex-x-center;
+    @include flex-column;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    padding: $size-8 55% $size-10 $size-4;
+    position: relative;
+
+    &__camp-name {
+      margin: $size-1 0 $size-6 0;
+      color: $gray-2;
+      font-family: 'Roboto Condensed';
+      font-weight: 700;
+      font-size: $size-7;
+    }
+    
+    &__img {
+      width: 55%;
+    }
+
+    &__btn-box {
+      right: calc(48% + -42px);
+    }
+  }
+}

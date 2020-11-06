@@ -1,5 +1,3 @@
-import { config } from "@fortawesome/fontawesome-svg-core";
-
 const breakpoints = {
   xs: 0,
   sm: 576,

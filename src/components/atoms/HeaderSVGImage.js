@@ -26,7 +26,10 @@ export default () => {
     setViewBox(`0 0 ${size.width} ${size.height}`);
     forSize({
       xs: () => { setPathXs(); },
-      sm: () => { setPathSm(); }
+      sm: () => { setPathSm(); },
+      md: () => { setPathSm(); },
+      lg: () => { setPathSm(); },
+      xl: () => { setPathSm(); }
     });
   }, [size]);
   
@@ -62,7 +65,25 @@ export default () => {
     `);
   };
 
+  const getImageTemplateXs = () => (
+    <image
+      href={ image }
+      x="0"
+      y={ -size.width * 0.6 + 80 }
+      width="100%"
+    />
+  );
 
+  const getImageTemplateSm = () => (
+    <image
+      href={ image }
+      x="0"
+      y="0"
+      { ...(size.width / size.height > imageRatio ? { width: "100%" } : { height: "100%" }) }
+    />
+  );
+
+  
   return (
     <div ref={ ref } className="welcome__img">
       <svg viewBox={ viewBox }>
@@ -79,26 +100,13 @@ export default () => {
             width="100%"
             height="100%"
           >
-            { 
-              forSize({
-                xs: () => (
-                  <image
-                    href={ image }
-                    x="0"
-                    y={ -size.width * 0.6 + 80 }
-                    width="100%"
-                  />
-                ),
-                sm: () => (
-                  <image
-                    href={ image }
-                    x="0"
-                    y="0"
-                    { ...(size.width / size.height > imageRatio ? { width: "100%" } : { height: "100%" }) }
-                  />
-                )
-              })
-            }
+            {forSize({
+              xs: getImageTemplateXs,
+              sm: getImageTemplateSm,
+              md: getImageTemplateSm,
+              lg: getImageTemplateSm,
+              xl: getImageTemplateSm,
+            })}
           </pattern>
         </defs>
       </svg>
