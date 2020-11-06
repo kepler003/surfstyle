@@ -8,6 +8,7 @@ export default () => {
   const [viewBox, setViewBox] = useState("0 0 0 0");
   const [path, setPath] = useState(null);
   const [amplitude, setAmplitude] = useState(0.15);
+  const imageRatio = 640 / 854;
   const ref = useRef(null);
 
 
@@ -78,22 +79,22 @@ export default () => {
             width="100%"
             height="100%"
           >
-            {
+            { 
               forSize({
                 xs: () => (
                   <image
-                    href={image}
+                    href={ image }
                     x="0"
-                    y={-size.width * 0.6 + 80}
+                    y={ -size.width * 0.6 + 80 }
                     width="100%"
                   />
                 ),
                 sm: () => (
                   <image
-                    href={image}
+                    href={ image }
                     x="0"
                     y="0"
-                    height="100%"
+                    { ...(size.width / size.height > imageRatio ? { width: "100%" } : { height: "100%" }) }
                   />
                 )
               })
