@@ -11,6 +11,8 @@
     $breakpoint: $breakpoint-md;
   } @else if $size == "lg" {
     $breakpoint: $breakpoint-lg;
+  } @else if $size == "xl" {
+    $breakpoint: $breakpoint-xl;
   } @else {
     $breakpoint: $size;
   }
