@@ -4,7 +4,10 @@
   width: 100%;
   height: $size-8;
   padding: 0 $padding-x-mobile;
-  background-color: rgba($white, .85);
+  background-color: rgba($white, .9);
+  z-index: 10;
+  position: sticky;
+  top: 0;
 
   &__nav {
     @include flex;
