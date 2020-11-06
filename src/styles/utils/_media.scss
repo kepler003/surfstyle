@@ -1,0 +1,21 @@
+
+@mixin forSize ($size: "xs") {
+  
+  $breakpoint: 0;
+
+  @if $size == "xs" {
+    $breakpoint: $breakpoint-xs;
+  } @else if $size == "sm" {
+    $breakpoint: $breakpoint-sm;
+  } @else if $size == "md" {
+    $breakpoint: $breakpoint-md;
+  } @else if $size == "lg" {
+    $breakpoint: $breakpoint-lg;
+  } @else {
+    $breakpoint: $size;
+  }
+  
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
