@@ -2,4 +2,5 @@
 .app {
   @include flex-start;
   width: 100%;
+  overflow-x: hidden;
 }

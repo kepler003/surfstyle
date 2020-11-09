@@ -27,4 +27,62 @@
   &__btn {
     margin: $size-5 auto 0 auto;
   }
+
+  &__img {
+    display: none;
+  }
+}
+
+
+@include forSize("sm") {
+
+  .places {
+    padding: $size-8 $size-6;
+    position: relative;
+
+    &__heading {
+      @include heading("h2");
+    }
+
+    &__btn {
+      margin-left: 0;
+    }
+
+    &__img {
+      display: flex;
+      width: $size-11;
+      transform: rotate(-55deg);
+      position: absolute;
+      top: -$size-9;
+      right: 0;
+    }
+  }
+}
+
+
+@include forSize("md") {
+
+  .places {
+    margin: $padding-md;
+    margin-top: -$size-9;
+    padding: $size-8 $padding-md;
+
+    &__heading {
+      max-width: $size-15;
+      @include heading("h1");
+    }
+  }
+}
+
+
+@include forSize("lg") {
+
+  .places {
+    max-width: 1000px;
+
+    &__img {
+      width: $size-12;
+      top: -$size-10;
+    }
+  }
 }
