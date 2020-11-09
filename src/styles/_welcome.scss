@@ -1,5 +1,6 @@
 
 .welcome {
+  width: 100%;
   padding: $padding-x-mobile;
   padding-bottom: 0;
 
@@ -127,6 +128,7 @@
   }
 }
 
+
 @include forSize ("md") {
 
   .welcome {
@@ -139,6 +141,10 @@
 
     &__camp-name {
       font-size: $size-8;
+    }
+
+    &__info-box {
+      max-width: $size-13;
     }
 
     &__img {
