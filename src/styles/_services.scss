@@ -1,8 +1,6 @@
 
 .services {
-  display: grid;
-  grid: auto / 1fr;
-  grid-gap: $size-4;
+  @include flex;
   width: 100%;
   padding: $size-7 $padding-xs;
 
@@ -11,9 +9,10 @@
     @include flex-column;
     flex-wrap: nowrap;
     width: 100%;
+    margin-top: $size-4;
 
     &--main {
-      margin-bottom: $size-4;
+      margin: 0 0 $size-4 0;
     }
   }
 
@@ -40,10 +39,18 @@
   }
 
   &__card {
-    padding: $size-5 $size-4;
+    padding: $size-6 $size-4;
     border-radius: $radius-3;
     overflow: hidden;
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+
+      & .services__card-image {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
 
     &::before {
       content: '';
@@ -57,11 +64,12 @@
 
     &-image {
       width: 100%;
+      transition: 250ms ease-in-out;
       z-index: -1;
-      transform: translateY(-50%);
+      transform: translate(-50%, -50%);
       position: absolute;
       top: 50%;
-      left: 0;
+      left: 50%;
     }
 
     &-label {
@@ -73,9 +81,47 @@
     }
 
     &-info {
+      max-width: $size-12;
+      @include separated-lines;
       color: $white;
       opacity: 0.9;
       z-index: 1;
     }
+  }
+}
+
+
+@include forSize("sm") {
+
+  .services {
+    
+    &__btn {
+      margin-left: 0;
+    }
+  }
+}
+
+
+@include forSize("md") {
+
+  .services {
+    justify-content: space-between;
+    padding: $padding-md;
+
+    &__tile {
+      width: auto;
+      max-width: calc(50% - #{$size-4});
+      margin-bottom: $size-4;
+      flex-grow: 1;
+    }
+  }
+}
+
+
+@include forSize("xl") {
+
+  .services {
+    padding-left: $padding-xl;
+    padding-right: $padding-xl;
   }
 }
