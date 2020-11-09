@@ -13,7 +13,7 @@ export default (config, cb) => {
     if (config === undefined) throw new Error('Config is not sepcified.');
   
     const { xs, sm, md, lg, xl, oneSize = true } = config;
-    const width = window.outerWidth;
+    const width = window.innerWidth;
 
     if (typeof config === 'number') {
       if (cb === undefined) throw new Error('Callback function is not specified.');
