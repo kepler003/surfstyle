@@ -3,7 +3,7 @@
   @include flex-y-center;
   width: 100%;
   height: $size-8;
-  padding: 0 $padding-x-mobile;
+  padding: 0 $padding-xs;
   background-color: $header-active-color;
   transition: background-color 150ms ease-in-out;
   z-index: 10;

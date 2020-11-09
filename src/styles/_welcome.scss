@@ -1,7 +1,7 @@
 
 .welcome {
   width: 100%;
-  padding: $padding-x-mobile;
+  padding: $padding-xs;
   padding-bottom: 0;
 
   &__city {
@@ -49,11 +49,11 @@
   }
 
   &__img {
-    width: calc(100% + #{$padding-x-mobile * 2});
+    width: calc(100% + #{$padding-xs * 2});
     height: $size-11;
     margin-top: $size-4;
-    margin-left: -$padding-x-mobile;
-    margin-right: -$padding-x-mobile;
+    margin-left: -$padding-xs;
+    margin-right: -$padding-xs;
   }
 
   &__btn-box {
@@ -154,5 +154,14 @@
     &__btn-box {
       right: calc(48% + -42px);
     }
+  }
+}
+
+
+@include forSize ("lg") {
+
+  .welcome {
+    padding: $padding-md;
+    padding-top: 0;
   }
 }
