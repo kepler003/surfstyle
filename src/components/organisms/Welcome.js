@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeaderSVGImage, Button, Icon } from 'atoms/atoms';
 
+
 export default () => (
   <header className="welcome">
     <p className="welcome__city">San Francisco</p>

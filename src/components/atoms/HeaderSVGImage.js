@@ -26,10 +26,7 @@ export default () => {
     setViewBox(`0 0 ${size.width} ${size.height}`);
     forSize({
       xs: () => { setPathXs(); },
-      sm: () => { setPathSm(); },
-      md: () => { setPathSm(); },
-      lg: () => { setPathSm(); },
-      xl: () => { setPathSm(); }
+      sm: () => { setPathSm(); }
     });
   }, [size]);
   
@@ -102,10 +99,7 @@ export default () => {
           >
             {forSize({
               xs: getImageTemplateXs,
-              sm: getImageTemplateSm,
-              md: getImageTemplateSm,
-              lg: getImageTemplateSm,
-              xl: getImageTemplateSm,
+              sm: getImageTemplateSm
             })}
           </pattern>
         </defs>

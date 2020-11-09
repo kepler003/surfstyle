@@ -1,41 +1,66 @@
-const breakpoints = {
-  xs: 0,
-  sm: 576,
-  md: 768,
-  lg: 992,
-  xl: 1200
+
+const xs = 0;
+const sm = 576;
+const md = 768;
+const lg = 992;
+const xl = 1200;
+
+
+const execOneFn = (size, cb) => {
+  
+  try {
+
+    if (cb === undefined) throw new Error('Callback function is not specified.');
+    if (window.innerWidth >= size) return cb();
+    return;
+
+  } catch(err) { console.log('execOneFn Error:', err); };
 };
+
+const execOneSize = (config) => {
+
+  try {
+    const width = window.innerWidth;
+
+    if (!!config.xs && width >= xs && width < sm) { return config.xs(); };
+    if (!!config.sm && width >= sm && width < md) { return config.sm(); };
+    if (!!config.md && width >= md && width < lg) { return config.md(); };
+    if (!!config.lg && width >= lg && width < xl) { return config.lg(); };
+    if (!!config.xl && width >= xl) { return config.xl(); };
+
+  } catch(err) { console.log('execOneSize Error:', err); };
+};
+
+const execToHigherSize = (config) => {
+
+  try {
+    const width = window.innerWidth;
+
+    if (!!config.xl && width >= xl) { return config.xl(); };
+    if (!!config.lg && width >= lg) { return config.lg(); };
+    if (!!config.md && width >= md) { return config.md(); };
+    if (!!config.sm && width >= sm) { return config.sm(); };
+    if (!!config.xs && width >= xs) { return config.xs(); };
+
+  } catch(err) { console.log('execToHigherSize Error:', err); };
+};
+
 
 export default (config, cb) => {
   
   try {
     
     if (config === undefined) throw new Error('Config is not sepcified.');
-  
-    const { xs, sm, md, lg, xl, oneSize = true } = config;
-    const width = window.innerWidth;
-
-    if (typeof config === 'number') {
-      if (cb === undefined) throw new Error('Callback function is not specified.');
-      if (window.outerWidth > config) return cb();
-      return;
-    }
     
-    if (oneSize) {
-      if (!!xs && width >= breakpoints.xs && width < breakpoints.sm) { return xs(); };
-      if (!!sm && width >= breakpoints.sm && width < breakpoints.md) { return sm(); };
-      if (!!md && width >= breakpoints.md && width < breakpoints.lg) { return md(); };
-      if (!!lg && width >= breakpoints.lg && width < breakpoints.xl) { return lg(); };
-      if (!!xl && width >= breakpoints.xl) { return xl(); };
-    } else {
-      if (!!xs && width >= breakpoints.xs) { return xs(); };
-      if (!!sm && width >= breakpoints.sm) { return sm(); };
-      if (!!md && width >= breakpoints.md) { return md(); };
-      if (!!lg && width >= breakpoints.lg) { return lg(); };
-      if (!!xl && width >= breakpoints.xl) { return xl(); };
-    };
+    const { mode = 'toHigher' } = config;
 
-  } catch (err) {
-    console.log(err);
-  }
+    if (typeof config === 'number') return execOneFn(config, cb);
+
+    switch (mode) {
+      case 'toHigher': return execToHigherSize(config);
+      case 'oneSize':  return execOneSize(config);
+      default: throw new Error(`Invalid function mode "${mode}"`);
+    }
+
+  } catch (err) { console.log(err); };
 };
