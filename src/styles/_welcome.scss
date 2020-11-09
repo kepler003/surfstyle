@@ -154,6 +154,19 @@
     &__btn-box {
       right: calc(48% + -42px);
     }
+    
+    &__btn {
+  
+      &::before {
+        width: $size-11;
+        height: $size-11;
+      }
+  
+      &::after {
+        width: $size-13;
+        height: $size-13;
+      }
+    }
   }
 }
 
@@ -175,6 +188,7 @@
   }
 }
 
+
 @include forSize ("xl") {
 
   .welcome {
@@ -186,6 +200,10 @@
 
     &__camp-name {
       font-size: $size-9;
+    }
+
+    &__btn-box {
+      margin-bottom: $padding-md;
     }
   }
 }
