@@ -1,0 +1,13 @@
+@use "sass:map";
+
+
+@mixin heading ($size) {
+  
+  @each $heading-size in map.keys($heading-sizes) {
+    @if $size == $heading-size {
+      font-size: map.get($heading-sizes, $size);
+    }
+  }
+
+  font-weight: 700;
+}

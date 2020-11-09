@@ -6,8 +6,8 @@
 
   &__city {
     color: $primary;
-    @extend .font--fancy;
-    @extend .font--size-h3;
+    font-family: $font-fancy;
+    @include heading("h4");
     font-weight: 400;
   }
 
@@ -37,7 +37,7 @@
     }
 
     &-heading {
-      @extend .font--size-h6;
+      @include heading("h6");
       letter-spacing: $size-1;
     }
 
