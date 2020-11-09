@@ -1,8 +1,7 @@
 
 .welcome {
   width: 100%;
-  padding: $padding-xs;
-  padding-bottom: 0;
+  padding: $size-8 $padding-xs 0 $padding-xs;
 
   &__city {
     color: $primary;

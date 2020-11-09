@@ -7,7 +7,7 @@
   background-color: $header-active-color;
   transition: background-color 150ms ease-in-out;
   z-index: 10;
-  position: sticky;
+  position: fixed;
   top: 0;
 
   &__nav {
