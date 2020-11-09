@@ -1,4 +1,4 @@
 import Header from './Header';
-import MainHeader from './MainHeader';
+import Welcome from './Welcome';
 
-export { Header, MainHeader };
+export { Header, Welcome };

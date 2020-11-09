@@ -1,11 +1,11 @@
 import React from 'react';
-import { Header, MainHeader } from 'organisms/organisms';
+import { Header, Welcome } from 'organisms/organisms';
 
 export default () => (
   <>
     <Header />
     <main className="main">
-      <MainHeader />
+      <Welcome />
     </main>
   </>
 );
