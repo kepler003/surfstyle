@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Welcome, Learn, Places } from 'organisms/organisms';
+import { Header, Welcome, Learn, Places, Services } from 'organisms/organisms';
 
 export default () => (
   <>
@@ -8,6 +8,7 @@ export default () => (
       <Welcome />
       <Learn />
       <Places />
+      <Services />
     </main>
   </>
 );
