@@ -22,6 +22,7 @@
   &--primary {
     background-color: $primary;
     background: linear-gradient(to bottom, $primary-6, $primary);
+    color: $gray-3;
     
     &:hover {
       background-color: $primary-4;
@@ -42,5 +43,14 @@
     width: $size-6;
     height: $size-6;
     border-radius: $radius-circle;
+  }
+
+  &--wide {
+    min-width: $size-10;
+  }
+
+
+  &--bold {
+    font-weight: 700;
   }
 }

@@ -11,3 +11,12 @@
 
   font-weight: 700;
 }
+
+@mixin section-heading {
+  @include heading("h4");
+  font-family: $font-condensed;
+}
+
+@mixin separated-lines {
+  line-height: $size-6 * 1.15;
+}

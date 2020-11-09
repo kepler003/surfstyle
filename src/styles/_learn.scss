@@ -1,0 +1,27 @@
+
+.learn {
+  @include flex;
+  width: 100%;
+  padding: $size-7 $padding-xs;
+  background-color: $gray-3;
+  background: linear-gradient(to right, $learn-background-color, $learn-background-color),
+              url("../images/sunset-sm.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+
+  &__heading {
+    margin-bottom: $size-6;
+    @include section-heading;
+    color: $primary-6;
+  }
+
+  &__info {
+    @include separated-lines;
+  }
+
+  &__btn--more {
+    margin: $size-6 auto 0 auto;
+  }
+}

@@ -1,14 +1,18 @@
 import React from 'react';
 
 
-export default ({ children, className, shape, bgColor, color, ...rest }) => {
+export default ({ children, className, shape, bgColor, color, bold, ...rest }) => {
 
   let newClassName = `${ className } button`;
+
+  // Set bold text
+  if (!!bold) newClassName += ' button--bold' 
 
   // Set shape
   switch (shape) {
     case undefined: break;
     case 'rounded': newClassName += ' button--icon'; break;
+    case 'wide':    newClassName += ' button--wide'; break;
   };
   
   // Set background color
