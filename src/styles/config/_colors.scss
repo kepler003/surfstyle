@@ -1,3 +1,4 @@
+@use "sass:map";
 
 $primary-1: hsl(41, 100%, 7%);
 $primary-2: hsl(39, 100%, 16%);
@@ -35,7 +36,15 @@ $gray: $gray-5;
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
 
-
 $font-color: $gray-4;
+
+$icon-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "gray":       $gray,
+  "white":      $white,
+  "font-color": $font-color
+);
+
 
 $header-active-color: rgba($white, .9);
