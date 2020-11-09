@@ -3,7 +3,7 @@
   @include flex-center;
   @include flex-column;
   max-width: $size-16;
-  padding: $size-4 $padding-xs $size-6 $padding-xs;
+  padding: $size-4 $padding-xs $size-7 $padding-xs;
 
   &__subheading {
     @include heading("h6");
@@ -28,7 +28,7 @@
 @include forSize("md") {
 
   .testimonials {
-    padding: $size-4 $padding-md;
+    padding: $size-4 $padding-md $size-8 $padding-md;
   
     &__heading {
       @include heading("h3");
