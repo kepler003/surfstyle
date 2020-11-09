@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'atoms/Button';
-import image from 'images/surfboard2.png';
+import image from 'images/surfboard.png';
 
 export default () => (
   <article className="places">
