@@ -4,7 +4,8 @@
   width: 100%;
   height: $size-8;
   padding: 0 $padding-x-mobile;
-  background-color: rgba($white, .9);
+  background-color: $header-active-color;
+  transition: background-color 150ms ease-in-out;
   z-index: 10;
   position: sticky;
   top: 0;
@@ -28,7 +29,30 @@
     position: fixed;
     left: 0;
 
+    &--active {
+      padding-right: $size-4;
+      background-color: $header-active-color;
+
+      & .header__nav-btn--menu {
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        transition: 0ms;
+        transform: translate(0, 0);
+        position: static;
+
+        &:hover {
+          background-color: hsla(0, 0%, 0%, .05);
+        }
+
+        & svg {
+          transform: translate(0, 0);
+        }
+      }
+    }
+
     &__nav-btn {
+      margin-left: $size-4;
 
       &--menu {
         width: $size-10;
@@ -40,11 +64,10 @@
         right: 0;
 
         &:hover {
-          width: $size-10 * 1.2;
-          height: $size-10 * 1.2;
+          width: $size-11;
+          height: $size-11;
           background-color: $white;
           color: $font-color;
-          box-shadow: inset 0 0 $size-4 $gray-6;
         }
 
         &:focus {
@@ -55,6 +78,31 @@
           transform: translate(-170%, 170%);
         }
       }
+    }
+  }
+}
+
+
+@include forSize ("md") {
+
+  .header {
+    padding-right: 48%;
+
+    &--active {
+      padding-right: $size-4;
+    }
+  }
+}
+
+
+@include forSize ("lg") {
+
+  .header {
+    height: $size-9;
+    padding-left: $size-7;
+
+    &--active {
+      height: $size-8;
     }
   }
 }
