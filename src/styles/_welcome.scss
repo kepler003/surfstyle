@@ -7,7 +7,7 @@
   &__city {
     color: $primary;
     font-family: $font-fancy;
-    @include heading("h4");
+    @include heading("h3");
     font-weight: 400;
   }
 
@@ -177,6 +177,11 @@
     padding: $padding-md;
     padding-top: 0;
 
+    &__city {
+      @include heading("h2");
+      font-weight: 400;
+    }
+
     &__info-box {
       padding-left: $size-8;
 
@@ -193,10 +198,6 @@
 
   .welcome {
     padding-top: $padding-md;
-
-    &__city {
-      font-size: $size-6;
-    }
 
     &__camp-name {
       font-size: $size-9;
