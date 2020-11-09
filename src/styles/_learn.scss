@@ -21,7 +21,52 @@
     @include separated-lines;
   }
 
+  &__line-break { display: none; }
+
   &__btn--more {
     margin: $size-6 auto 0 auto;
+  }
+}
+
+
+@include forSize("sm") {
+
+  .learn {
+    @include flex-column;
+    padding-top: $size-8;
+    padding-bottom: $size-8;
+
+    &__heading {
+      @include heading("h2");
+    }
+
+    &__info {
+      max-width: $size-13;
+    }
+
+    &__btn--more {
+      margin-left: 0;
+    }
+  }
+}
+
+
+@include forSize("md") {
+
+  .learn {
+    padding: $size-9 $padding-md;
+    background: linear-gradient(to right, $learn-background-color, $learn-background-color),
+    url("../images/sunset-md.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__heading {
+      @include heading("h1");
+    }
+    
+    &__line-break {
+      display: inline;
+    }
   }
 }
