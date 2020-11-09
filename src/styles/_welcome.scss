@@ -163,5 +163,29 @@
   .welcome {
     padding: $padding-md;
     padding-top: 0;
+
+    &__info-box {
+      padding-left: $size-8;
+
+      &::before {
+        width: 48px;
+        height: 2px;
+      }
+    }
+  }
+}
+
+@include forSize ("xl") {
+
+  .welcome {
+    padding-top: $padding-md;
+
+    &__city {
+      font-size: $size-6;
+    }
+
+    &__camp-name {
+      font-size: $size-9;
+    }
   }
 }
