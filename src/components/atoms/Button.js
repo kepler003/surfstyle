@@ -17,9 +17,9 @@ export default ({ children, className, shape, bgColor, color, bold, ...rest }) =
   
   // Set background color
   switch (bgColor) {
-    case undefined:     break;
-    case 'primary':     newClassName += ' button--primary'; break;
-    case 'transparent': newClassName += ' button--transparent'; break;
+    case undefined:        break;
+    case 'primary':        newClassName += ' button--primary'; break;
+    case 'transparent':    newClassName += ' button--transparent'; break;
   }
   
   // Set text color

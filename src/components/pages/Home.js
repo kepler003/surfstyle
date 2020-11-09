@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Welcome, Learn, Places, Services, Testimonials } from 'organisms/organisms';
+import { Header, Welcome, Learn, Places, Services, Testimonials, Footer } from 'organisms/organisms';
 
 export default () => (
   <>
@@ -10,6 +10,7 @@ export default () => (
       <Places />
       <Services />
       <Testimonials />
+      <Footer />
     </main>
   </>
 );
