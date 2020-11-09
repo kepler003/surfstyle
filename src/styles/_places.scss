@@ -1,0 +1,30 @@
+
+.places {
+  flex-grow: 1;
+  margin: $padding-xs;
+  margin-top: -$size-9;
+  padding: $size-7 $padding-xs;
+  background-color: $white;
+  border-radius: $radius-3;
+  box-shadow: $shadow-3;
+
+  &__subheading {
+    color: $primary;
+    font-family: $font-fancy;
+    font-size: $size-6;
+  }
+
+  &__heading {
+    margin: $size-5 0;
+    color: $secondary-4;
+    @include section-heading;
+  }
+
+  &__info {
+    @include separated-lines;
+  }
+
+  &__btn {
+    margin: $size-5 auto 0 auto;
+  }
+}

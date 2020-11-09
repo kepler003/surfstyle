@@ -2,7 +2,7 @@
 .learn {
   @include flex;
   width: 100%;
-  padding: $size-7 $padding-xs;
+  padding: $size-7 $padding-xs calc(#{$size-7 + $size-9}) $padding-xs;
   background-color: $gray-3;
   background: linear-gradient(to right, $learn-background-color, $learn-background-color),
               url("../images/sunset-sm.jpg");
@@ -20,8 +20,6 @@
   &__info {
     @include separated-lines;
   }
-
-  &__line-break { display: none; }
 
   &__btn--more {
     margin: $size-6 auto 0 auto;
@@ -63,10 +61,6 @@
 
     &__heading {
       @include heading("h1");
-    }
-    
-    &__line-break {
-      display: inline;
     }
   }
 }
