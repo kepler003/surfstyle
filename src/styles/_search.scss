@@ -1,18 +1,26 @@
 
+$animation-duration: 250ms;
+
 .search {
   @include flex-center;
-  background-color: $search-background-color;
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 100;
-
+  animation: animate-modal-overlay $animation-duration;
+  animation-fill-mode: forwards;
+  
   &__content {
+    opacity: 0;
+    transform: skewX(90deg);
     position: absolute;
     top: $size-8 + $size-5;
     right: $size-5;
+    animation: animate-modal-content $animation-duration;
+    animation-fill-mode: forwards;
 
     &:focus {
       outline: none;
@@ -34,5 +42,19 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+
+@keyframes animate-modal-overlay {
+  to {
+    background-color: $search-background-color;
+  }
+}
+
+@keyframes animate-modal-content {
+  to {
+    opacity: 1;
+    transform: skewX(0);
   }
 }

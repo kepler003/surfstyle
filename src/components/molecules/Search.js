@@ -40,6 +40,7 @@ export default () => {
         appElement=      { document.querySelector('#root') }
         isOpen=          { isOpen }
         onRequestClose=  { closeModal }
+        closeTimeoutMS=  { 250 }
       >
         <div className="search__box">
           <input 
