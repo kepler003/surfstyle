@@ -49,7 +49,12 @@ export default () => {
             ref=         { autoFocus }
             onKeyUp={ handleKeyUp }
           />
-          <Button className="search__btn" bgColor="primary" shape="rounded">
+          <Button
+            className="search__btn"
+            bgColor="primary"
+            shape="rounded"
+            onClick={ closeModal }
+          >
             <Icon icon="search" />
           </Button>
         </div>
