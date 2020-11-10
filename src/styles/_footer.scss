@@ -9,7 +9,7 @@
   position: relative;
 
   &__list {
-    @include flex;
+    @include flex-center;
     width: 100%;
     margin-bottom: $size-6;
 
@@ -19,6 +19,7 @@
   }
 
   &__label {
+    @include flex-center;
     width: 100%;
     margin-bottom: $size-4;
     padding-bottom: $size-4;
@@ -33,12 +34,11 @@
       background-color: $gray-3;
       position: absolute;
       bottom: 0;
-      left: 0;
     }
   }
 
   &__item {
-    margin: $size-1 $size-4 $size-1 0;
+    margin: $size-2;
     color: $gray-4;
     list-style: none;
   }
@@ -69,9 +69,14 @@
     padding: $size-8 $size-4;
 
     &__list {
+      @include flex-start;
       @include flex-column;
       width: auto;
       margin-bottom: 0;
+    }
+
+    &__label {
+      justify-content: flex-start;
     }
 
     &__item {
