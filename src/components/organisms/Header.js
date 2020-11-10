@@ -20,7 +20,7 @@ export default () => {
 
   
   return (
-    <header className={`header${isActive ? ' header--active' : ''}`}>
+    <header className={`header${isActive ? ' header--active' : ''} js-header`}>
       <Logo />
       <HeaderNav />
     </header>
