@@ -1,0 +1,118 @@
+
+$animation-duration: 250ms;
+
+.menu {
+  @include flex-center;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  animation: animate-menu-overlay-open $animation-duration;
+  animation-fill-mode: forwards;
+  
+  &--close {
+    animation: animate-menu-overlay-close $animation-duration;
+    animation-fill-mode: forwards;
+  }
+  
+  &__content {
+    max-width: calc(100% - #{$size-4 * 2});
+    position: absolute;
+    top: $size-8 + $size-4;
+    right: $size-4;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__box {
+    padding: $size-6 $size-8;
+    background-color: $white;
+    border-radius: $radius-3;
+    box-shadow: $shadow-2;
+  }
+
+  &__list {
+    @include flex-center;
+    @include flex-column;
+    list-style: none;
+  }
+
+  &__item {
+    margin: $size-3 0;
+    overflow: hidden;
+    animation: 0ms linear 250ms hide-underline;
+    animation-fill-mode: forwards;
+  }
+
+  &__link {
+    @include flex-center;
+    color: $font-color;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 1px;
+      background-color: $secondary-4;
+      position: absolute;
+      bottom: -$size-2;
+      animation: animate-underline-close 250ms;
+      animation-fill-mode: forwards;
+    }
+
+    &:hover {
+      color: $secondary-4;
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 1px;
+        background-color: $secondary-4;
+        position: absolute;
+        bottom: -$size-2;
+        animation: animate-underline-open 250ms;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+
+@keyframes animate-menu-overlay-open {
+  to {
+    background-color: $search-background-color;
+  }
+}
+
+@keyframes animate-menu-overlay-close {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes animate-underline-open {
+  to {
+    width: $size-6;
+  }
+}
+
+@keyframes animate-underline-close {
+  from {
+    width: $size-6;
+  }
+  to {
+    width: 0px;
+  }
+}
+
+@keyframes hide-underline {
+  to {
+    overflow: initial;
+  }
+}
