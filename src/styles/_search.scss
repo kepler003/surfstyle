@@ -20,7 +20,6 @@ $animation-duration: 250ms;
   
   &__content {
     opacity: 0;
-    transform: skewX(90deg);
     position: absolute;
     top: $size-8 + $size-5;
     right: $size-5;
@@ -43,7 +42,6 @@ $animation-duration: 250ms;
   }
 
   &__btn {
-    transform: scale(0.9);
     position: absolute;
     top: 0;
     right: 0;
@@ -60,7 +58,6 @@ $animation-duration: 250ms;
 @keyframes animate-modal-content-open {
   to {
     opacity: 1;
-    transform: skewX(0);
   }
 }
 
