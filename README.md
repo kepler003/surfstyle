@@ -12,7 +12,7 @@ Project is based on React.js. It was created using custom webpack setup and it w
 
 ## Fonts & icons
 
-Surfstyle uses Font Awesome icons and three diffrent Google fonts: Qwigley, Roboto and Roboto Condensed.
+Surfstyle uses Font Awesome icons and three different Google fonts: Qwigley, Roboto and Roboto Condensed.
 
 ## Images
 
