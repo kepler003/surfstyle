@@ -5,7 +5,7 @@ import { Button, Icon } from 'atoms/atoms';
 
 export default () => {
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
 
   const openModal = () => {
@@ -17,6 +17,11 @@ export default () => {
   };
 
   const autoFocus = input => input && input.focus();
+
+
+  const handleKeyUp = (e) => {
+    if (e.keyCode === 13) closeModal();
+  };
 
 
   return (
@@ -42,6 +47,7 @@ export default () => {
             type=        "text" 
             placeholder= "Search..."
             ref=         { autoFocus }
+            onKeyUp={ handleKeyUp }
           />
           <Button className="search__btn" bgColor="primary" shape="rounded">
             <Icon icon="search" />
