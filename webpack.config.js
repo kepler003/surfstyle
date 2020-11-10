@@ -52,7 +52,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/", // Change to '/' for production
+    publicPath: "/",
     filename: "bundle.js"
   },
   devServer: {
