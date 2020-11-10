@@ -3,6 +3,6 @@ import React from 'react';
 
 export default () => (
   <div className="logo">
-    <span>SURFSTYLE.</span>
+    <a className="logo__link" href="/">SURFSTYLE.</a>
   </div>
 );
