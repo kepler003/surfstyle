@@ -1,0 +1,15 @@
+
+.input {
+  min-height: $size-6;
+  min-width: $size-6;
+  padding: 0 $size-3;
+  border: 1px solid $gray-8;
+  border-radius: $radius-circle;
+  box-shadow: $shadow-1;
+  transition: 150ms ease-in-out;
+  
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-2;
+  }
+}

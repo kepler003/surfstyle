@@ -1,0 +1,38 @@
+
+.search {
+  @include flex-center;
+  background-color: $search-background-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  &__content {
+    position: absolute;
+    top: $size-8 + $size-5;
+    right: $size-5;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__box {
+    @include flex;
+    transform: translateX(-100%);
+    position: absolute;
+  }
+
+  &__input {
+    width: $size-12;
+  }
+
+  &__btn {
+    transform: scale(0.9);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
