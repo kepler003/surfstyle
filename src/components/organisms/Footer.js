@@ -32,5 +32,13 @@ export default () => (
       <li className="footer__item"><a className="footer__link" href="">Amet consectetu</a></li>
       <li className="footer__item"><a className="footer__link" href="">Adipiscing</a></li>
     </ul>
+    <p className="footer__dev">Created by Bartłomiej Pyzocha
+      <a className="footer__dev-link" target="_blank" href="https://www.facebook.com/bartek.pyzocha/" >
+        <Icon icon="facebook" />
+      </a>
+      <a className="footer__dev-link" target="_blank" href="https://github.com/kepler003" >
+        <Icon icon="github" />
+      </a>
+    </p>
   </footer>
 );

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default ({ icon = "question", color, className = '', ...rest }) => {
   
   let newClassName = className;
-  const brands = ['instagram', 'facebook', 'twitter'];
+  const brands = ['instagram', 'facebook', 'twitter', 'github'];
 
   // Set brand icon
   if (brands.includes(icon)) icon = ['fab', icon];

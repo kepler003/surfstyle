@@ -6,6 +6,7 @@
   padding: $size-8 $size-4;
   background-color: $gray-2;
   color: $gray-4;
+  position: relative;
 
   &__list {
     @include flex;
@@ -45,6 +46,17 @@
   &__link {
     color: $gray-4;
     text-decoration: none;
+  }
+
+  &__dev {
+    position: absolute;
+    bottom: $size-4;
+    right: $size-4;
+    font-size: $size-3;
+  }
+
+  &__dev-link {
+    margin-left: $size-2;
   }
 }
 
