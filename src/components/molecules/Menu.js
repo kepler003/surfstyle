@@ -5,7 +5,7 @@ import { Button, Icon } from 'atoms/atoms';
 
 export default () => {
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [willClose, setWillClose] = useState(false);
 
 
