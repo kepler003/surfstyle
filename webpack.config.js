@@ -17,7 +17,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.(woff(2)?|ttf|eot|png|jpg|jpeg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot|png|jpg|jpeg|ico)(\?v=\d+\.\d+\.\d+)?$/,
         use: {
           loader: 'file-loader',
           options: {
@@ -52,7 +52,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
+    publicPath: "/",
     filename: "bundle.js"
   },
   devServer: {
@@ -63,7 +63,8 @@ module.exports = {
   ignoreWarnings: [/Failed to parse source map/],
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve('./public/index.html')
+      template: path.resolve('./public/index.html'),
+      favicon: 'src/images/favicon.png'
     })
   ]
 };
