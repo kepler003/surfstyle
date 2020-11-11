@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Qwigley&family=Roboto&family=Roboto+Condensed:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Qwigley';
+  src: url('../fonts/Qwigley-Regular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf') format("truetype"),
+       url('../fonts/Roboto-Bold.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/RobotoCondensed-Regular.ttf') format("truetype"),
+       url('../fonts/RobotoCondensed-Bold.ttf') format("truetype");
+}
 
 $font-fancy: "Qwigley";
 $font-condensed: "Roboto Condensed";
